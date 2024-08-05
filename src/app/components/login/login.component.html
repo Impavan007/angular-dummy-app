@@ -1,0 +1,19 @@
+<div class="page-container">
+    <form class="container" [formGroup]="loginForm">
+        <h4>Please Login</h4>
+        <div class="inputs">
+            <label for="email">Email</label>
+            <input type="email" [formControl]="email" required />
+            <h5 style="color: red;" [hidden]="email.valid || email.untouched">Please enter a correct email</h5>
+        </div>
+        <div class="inputs">
+            <label for="password">Password</label>
+            <input type="text" [formControl]="password" required />
+            <h5 style="color: red;" [hidden]="password.valid || password.untouched">Password should be 6 characters long</h5>
+        </div>
+        <div class="inputs">
+            <button type="submit" [disabled]="loginForm.invalid" (click)="login()">Submit</button>
+            <button (click)="reset()">Reset</button>
+        </div>
+    </form>
+</div>
